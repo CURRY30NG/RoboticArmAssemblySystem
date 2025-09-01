@@ -1,0 +1,7 @@
+# ---- ROS2 / Colcon ----
+log/
+install/
+build/
+
+# ---- VSCode / IDE ----
+.vscode/
