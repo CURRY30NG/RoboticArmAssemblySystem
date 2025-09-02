@@ -5,3 +5,6 @@ build/
 
 # ---- VSCode / IDE ----
 .vscode/
+
+# ---- UR packages ----
+src/Universal_*/
