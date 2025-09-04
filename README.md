@@ -1,42 +1,32 @@
 # FAPS Robotic Arm Cabinet Assembly System
 
 ## Requirements
-- <a href="https://releases.ubuntu.com/jammy/">Ubuntu 22.04</a>
-- <a href="https://docs.ros.org/en/humble/Installation/Ubuntu-Install-Debians.html">ROS2 Humble</a>
+- <a href="https://releases.ubuntu.com/noble/">Ubuntu 24.04</a>
+- <a href="https://docs.ros.org/en/jazzy/Installation.html">ROS2 Jazzy</a>
+- <a href="https://moveit.picknik.ai/main/index.html">MoveIt2 </a>
+- <a href="https://control.ros.org/jazzy/doc/getting_started/getting_started.html">ros2_control</a>
 
 ## Resources
-- <a href="https://moveit.picknik.ai/main/index.html">MoveIt 2 Documentation</a>
-- <a href="https://control.ros.org/humble/doc/getting_started/getting_started.html">ros2_control</a>
-- <a href="https://control.ros.org/humble/doc/gazebo_ros2_control/doc/index.html">gazebo_ros2_control</a>
-- <a href="https://github.com/UniversalRobots">UniversalRobots Repo</a>
-- <a href="https://github.com/UniversalRobots/Universal_Robots_ROS2_Driver/tree/humble">Universal_Robots_ROS2_Driver-humble-repo</a>
-- <a href="https://docs.ros.org/en/ros2_packages/humble/api/ur_robot_driver/doc/overview.html">Universal_Robots_ROS2_Driver-doc</a>
+- <a href="https://picknik.ai/hardware-ecosystem/">ROS 2 Compatible Hardwares</a>
+- <a href="https://github.com/UniversalRobots">Universal_Robots Repo</a>
+- <a href="https://github.com/UniversalRobots/Universal_Robots_ROS2_Driver/tree/jazzy">Universal_Robots_ROS2_Driver-jazzy</a>
+- <a href="https://docs.universal-robots.com/Universal_Robots_ROS2_Documentation/doc/ur_robot_driver/ur_robot_driver/doc/index.html">Universal Robots ROS 2 driver Documentation</a>
 
 
-## Tutorial - UR10e in Gazebo
+## Tutorials
+- <a href="https://automaticaddison.com/the-complete-guide-to-docker-for-ros-2-jazzy-projects/">The Complete Guide to Docker for ROS 2 Jazzy Projects</a>
+- <a href="https://automaticaddison.com/tutorials/#Manipulation">ROS2 Manipulation Tutorials</a>
 
-Remember to install these packages in your system:
-```
-sudo apt install ros-humble-ros2-control
-sudo apt install ros-humble-ros2-controllers
-sudo apt install ros-humble-gripper-controllers
-sudo apt install gazebo
-sudo apt install ros-humble-gazebo-ros2-control
-sudo apt install ros-humble-gazebo-ros-pkgs
-sudo apt install ros-humble-xacro
-sudo apt install ros-humble-rmw-cyclonedds-cpp
-sudo apt install ros-humble-sensor-msgs
-sudo apt install ros-humble-ur-moveit-config
-sudo apt install ros-humble-ompl
-```
+## Working on:
+- building development env using Docker
+    - Sep3-Log: already updated via Teams
+    - What's next: 
+      - keep learning and trying
+      - when things went not well, just use local env (Ubuntu 24.04 + ROS2 jazzy)
 
-1. build workspace and source
-2. under src/ ```git clone -b humble https://github.com/UniversalRobots/Universal_Robots_ROS2_Description.git```, these are ROS2 URDFs for Universal Robots. 
-3. under src/ ```git clone -b humble https://github.com/UniversalRobots/Universal_Robots_ROS2_Gazebo_Simulation.git```, this is for Gazebo simulation.
-4. within ws using ```rosdep update && rosdep install --ignore-src --from-paths . -y``` for install dependencies for Universal_Robots_ROS2_Gazebo_Simulation.
-5. build and source
-6. ```ros2 launch ur_simulation_gazebo ur_sim_control.launch.py``` for testing, ur robot should be shown both in rviz and gazebo.
-7. ```ros2 launch ur_simulation_gazebo ur_sim_moveit.launch.py``` for trying moveit
+
+
+
 
 
 
