@@ -8,3 +8,4 @@ build/
 
 # ---- UR packages ----
 src/Universal_*/
+src/log/

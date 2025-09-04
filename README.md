@@ -16,7 +16,7 @@
 ## Tutorial - UR10e in Gazebo
 
 Remember to install these packages in your system:
-
+```
 sudo apt install ros-humble-ros2-control
 sudo apt install ros-humble-ros2-controllers
 sudo apt install ros-humble-gripper-controllers
@@ -26,11 +26,18 @@ sudo apt install ros-humble-gazebo-ros-pkgs
 sudo apt install ros-humble-xacro
 sudo apt install ros-humble-rmw-cyclonedds-cpp
 sudo apt install ros-humble-sensor-msgs
+sudo apt install ros-humble-ur-moveit-config
+sudo apt install ros-humble-ompl
+```
 
 1. build workspace and source
 2. under src/ ```git clone -b humble https://github.com/UniversalRobots/Universal_Robots_ROS2_Description.git```, these are ROS2 URDFs for Universal Robots. 
 3. under src/ ```git clone -b humble https://github.com/UniversalRobots/Universal_Robots_ROS2_Gazebo_Simulation.git```, this is for Gazebo simulation.
-4. using ```rosdep update && rosdep install --ignore-src --from-paths . -y``` for install dependencies for Universal_Robots_ROS2_Gazebo_Simulation.
-meet error: unable to locate package ros-humble-gazebo-ros2-control
+4. within ws using ```rosdep update && rosdep install --ignore-src --from-paths . -y``` for install dependencies for Universal_Robots_ROS2_Gazebo_Simulation.
+5. build and source
+6. ```ros2 launch ur_simulation_gazebo ur_sim_control.launch.py``` for testing, ur robot should be shown both in rviz and gazebo.
+7. ```ros2 launch ur_simulation_gazebo ur_sim_moveit.launch.py``` for trying moveit
+
+
 
 
