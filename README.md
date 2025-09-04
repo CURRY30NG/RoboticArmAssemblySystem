@@ -3,7 +3,7 @@
 ## Requirements
 - <a href="https://releases.ubuntu.com/noble/">Ubuntu 24.04</a>
 - <a href="https://docs.ros.org/en/jazzy/Installation.html">ROS2 Jazzy</a>
-- <a href="https://moveit.picknik.ai/main/index.html">MoveIt2 </a>
+- <a href="https://moveit.ai/install-moveit2/binary/">MoveIt2 </a>
 - <a href="https://control.ros.org/jazzy/doc/getting_started/getting_started.html">ros2_control</a>
 
 ## Resources
