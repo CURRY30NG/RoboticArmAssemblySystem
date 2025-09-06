@@ -23,6 +23,11 @@
     - What's next: 
       - keep learning and trying
       - when things went not well, just use local env (Ubuntu 24.04 + ROS2 jazzy)
+    - Sep6-Log: finally ur_ros_driver and ur_gz_simulation work on docker
+    - What's next: 
+      - Sep10 make it run on Halle5-computer
+      - try to make real robot move
+      - documentation
 
 
 
