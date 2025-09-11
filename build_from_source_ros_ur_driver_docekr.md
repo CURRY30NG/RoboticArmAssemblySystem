@@ -18,7 +18,7 @@ rosdep install --ignore-src --from-paths src -y
 6. colcon build --cmake-args -DCMAKE_BUILD_TYPE=Release
 7. source install/setup.bash
 
-Test: 
+before Test, make sure u source /opt/ros/jazzy/setup.bash and source install/setup.bash under ws: 
 1. ros2 launch ur_robot_driver ur_control.launch.py ur_type:=ur5e robot_ip:=yyy.yyy.yyy.yyy use_mock_hardware:=true
 2. open another terminal for the same container using docker exec -it moveit2_container /bin/bash
 3. cd /root/ros_ur_driver/ and then source /opt/ros/jazzy/setup.bash && source install/setup.bash
