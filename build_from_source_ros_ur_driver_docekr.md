@@ -9,10 +9,9 @@ REF: https://docs.universal-robots.com/Universal_Robots_ROS2_Documentation/doc/u
 
 1. under root create new ws ros_ur_driver using mkdir
 2. cd ros_ur_driver and mkdir src
-3. git clone https://github.com/UniversalRobots/Universal_Robots_ROS2_Driver.git src/Universal_Robots_ROS2_Driver
-  - git clone -b jazzy https://github.com/UniversalRobots/Universal_Robots_ROS2_Driver.git src/Universal_Robots_ROS2_Driver
-  - 2 sterr ?
-4. rosdep update
+3. git clone -b jazzy https://github.com/UniversalRobots/Universal_Robots_ROS2_Driver.git src/Universal_Robots_ROS2_Driver
+  - u should see 2 sterr
+4. rosdep update &&
 rosdep install --ignore-src --from-paths src -y
 5. source /opt/ros/jazzy/setup.bash
 6. colcon build --cmake-args -DCMAKE_BUILD_TYPE=Release
