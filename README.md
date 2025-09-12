@@ -28,7 +28,14 @@
       - Sep10 make it run on Halle5-computer
       - try to make real robot move
       - documentation
-
+    - Sep11-Log: successfully run real UR10e with moveIt MotionPlanning Plugin in RViz
+    - What's next:
+      - learn moveIt, knowing what's there for our usage:
+        - write a moveIt control node and implement home-pose
+      - Integrate the camera into the system：
+        - ros2 wrapper
+        - add cam in urdf
+        - calibration
 
 
 
