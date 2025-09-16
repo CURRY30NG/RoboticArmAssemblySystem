@@ -11,6 +11,8 @@
 - <a href="https://github.com/UniversalRobots">Universal_Robots Repo</a>
 - <a href="https://github.com/UniversalRobots/Universal_Robots_ROS2_Driver/tree/jazzy">Universal_Robots_ROS2_Driver-jazzy</a>
 - <a href="https://docs.universal-robots.com/Universal_Robots_ROS2_Documentation/doc/ur_robot_driver/ur_robot_driver/doc/index.html">Universal Robots ROS 2 driver Documentation</a>
+- <a href="https://github.com/FraunhoferIOSB/camera_aravis2/tree/main?tab=readme-ov-file">Camera Driver</a>
+
 
 
 ## Tutorials
