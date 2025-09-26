@@ -21,9 +21,10 @@
 - <a href="https://automaticaddison.com/tutorials/#Manipulation">ROS2 Manipulation Tutorials</a>
 - <a href="https://docs.nav2.org/tutorials/docs/camera_calibration.html">ROS2 Camera Calibration</a>
 
+## TODOs: 
+- [] cam intrinsic param calibration
 
-
-## Working on:
+## Working Log:
 - building development env using Docker
     - Sep3-Log: already updated via Teams
     - What's next: 
