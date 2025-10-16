@@ -1,0 +1,1 @@
+ros2 run camera_calibration cameracalibrator --pattern charuco --size 7x5 --square 0.04 --charuco_marker_size 0.02 --aruco_dict 6x6_250 --no-service-check --ros-args -r image:=/camera_driver_uv_example/vis/image_raw -p camera:=/camera_driver_uv_example
