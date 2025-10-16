@@ -74,7 +74,7 @@ def generate_launch_description():
                         'BinningHorizontal': 1,
                         'BinningVertical': 1,
                         'OffsetX': 32,
-                        'OffsetY': 10
+                        'OffsetY': 10 # the offsets come from output config of offical idk 
                     },
                     'AcquisitionControl': {
                         'AcquisitionFrameRateEnable': True,
