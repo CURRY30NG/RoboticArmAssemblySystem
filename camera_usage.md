@@ -4,12 +4,10 @@
 
 This document guides you through using the camera driver and performing intrinsic calibration. Please follow the steps in order.
 
-**Prerequisite:** Open a terminal.
-
 ## Installation of Calibration-Related Packages
 
 ### 1\. Install system dependencies
-
+open a terminal
 ```bash
 sudo apt install ros-jazzy-camera-calibration-parsers
 sudo apt install ros-jazzy-camera-info-manager
