@@ -21,8 +21,11 @@
 - <a href="https://automaticaddison.com/tutorials/#Manipulation">ROS2 Manipulation Tutorials</a>
 - <a href="https://docs.nav2.org/tutorials/docs/camera_calibration.html">ROS2 Camera Calibration</a>
 
-## For ur_driver and simulation in Docker:
+## For ur_driver and simulation in Docker(Halle5-Computer):
 pls check [README_docker_usage.md](/README_docker_usage.md)
+
+## For Camera_usage in song_ws(Halle5-Computer):
+pls check [camera_usage.md](/camera_usage.md)
 
 ## TODOs: 
 - [] make documentation well structed
