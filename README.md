@@ -13,8 +13,6 @@
 - <a href="https://docs.universal-robots.com/Universal_Robots_ROS2_Documentation/doc/ur_robot_driver/ur_robot_driver/doc/index.html">Universal Robots ROS 2 driver Documentation</a>
 - <a href="https://github.com/FraunhoferIOSB/camera_aravis2/tree/main?tab=readme-ov-file">Camera Driver</a>
 
-
-
 ## Tutorials
 - <a href="https://docs.nav2.org/tutorials/docs/docker_dev.html">Docker for Dev</a>
 - <a href="https://automaticaddison.com/the-complete-guide-to-docker-for-ros-2-jazzy-projects/">The Complete Guide to Docker for ROS 2 Jazzy Projects</a>
@@ -28,7 +26,8 @@ pls check [README_docker_usage.md](/README_docker_usage.md)
 pls check [camera_usage.md](/camera_usage.md)
 
 ## TODOs: 
-- [] make documentation well structed
+- [ ] make documentation easily to understand
+- [ ] make development env clear without Docker, git push what? example workflow (work together)   
 
 
 
