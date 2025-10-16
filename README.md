@@ -22,27 +22,9 @@
 - <a href="https://docs.nav2.org/tutorials/docs/camera_calibration.html">ROS2 Camera Calibration</a>
 
 ## TODOs: 
-- [] cam intrinsic param calibration
+- [] make documentation well structed
 
-## Working Log:
-- building development env using Docker
-    - Sep3-Log: already updated via Teams
-    - What's next: 
-      - keep learning and trying
-      - when things went not well, just use local env (Ubuntu 24.04 + ROS2 jazzy)
-    - Sep6-Log: finally ur_ros_driver and ur_gz_simulation work on docker
-    - What's next: 
-      - Sep10 make it run on Halle5-computer
-      - try to make real robot move
-      - documentation
-    - Sep11-Log: successfully run real UR10e with moveIt MotionPlanning Plugin in RViz
-    - What's next:
-      - learn moveIt, knowing what's there for our usage:
-        - write a moveIt control node and implement home-pose
-      - Integrate the camera into the system：
-        - ros2 wrapper
-        - add cam in urdf
-        - calibration
+
 
 
 
