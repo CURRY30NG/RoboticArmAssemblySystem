@@ -74,7 +74,7 @@ colcon build --symlink-install --packages-up-to camera_aravis2
 
 3.  Create a new launch file using the GUID to start the camera.
 
-      * Simply copy the original `uv_example` launch file and modify it (the example I created is **here**).
+      * Simply copy the original `uv_example` launch file and modify it (the example I created is [here](/ueye_ros2_driver_uv_song.launch.py)).
       * Then build and launch:
 
     <!-- end list -->
