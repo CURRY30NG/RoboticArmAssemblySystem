@@ -26,7 +26,7 @@ pls check [README_docker_usage.md](/README_docker_usage.md)
 pls check [camera_usage.md](/camera_usage.md)
 
 ## TODOs: 
-- [ ] make documentation easily to understand
+- [x] make documentation clear for current uasge
 - [ ] make development env clear without Docker, git push what? example workflow (work together)   
 
 
