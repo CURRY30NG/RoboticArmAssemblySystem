@@ -103,3 +103,48 @@ You can also create different launch files for different configurations.
 > **Note:** Run `ros2 run camera_aravis2 camera_xml_exporter`. A camera-specific GenICam XML file will be obtained. Check this file to get info on what features the camera supports for configuration.
 
 ## Intrinsic Calibration
+
+1. **Ensure the workspace `song_ws` is sourced:**
+```bash
+   cd /home/oliver/song_ws
+   source install/setup.bash
+````
+
+2. **Make sure the camera is well connected.**
+
+3. **Launch the camera:**
+
+   ```bash
+   ros2 launch camera_aravis2 ueye_ros2_driver_uv_song.launch.py
+   ```
+
+4. **Open another terminal and source the workspace again:**
+
+   ```bash
+   cd /home/oliver/song_ws
+   source install/setup.bash
+   ```
+
+5. **Run the calibration node:**
+
+   ```bash
+   ros2 run camera_calibration cameracalibrator \
+     --pattern charuco \
+     --size 7x5 \
+     --square 0.04 \
+     --charuco_marker_size 0.02 \
+     --aruco_dict 6x6_250 \
+     --no-service-check \
+     --ros-args -r image:=/camera_driver_uv_example/vis/image_raw \
+                -p camera:=/camera_driver_uv_example
+   ```
+
+6. **A UI window will open — proceed with the manual calibration process.**
+
+7. **Press the save button to see the result. Data is saved to “/tmp/calibrationdata.tar.gz”**
+
+8. **To use the the calibration file unzip the calibration.tar.gz
+`tar -xvf calibration.tar.gz`**
+
+9. **In the folder images used for calibration are available and also “ost.yaml” and “ost.txt”. Copy the “ost.yaml” file to “/home/oliver/song_ws/src/camera_aravis2/camera_aravis2/config” and then modify the [launch file](/ueye_ros2_driver_uv_song.launch.py) to use the calibration info.**
+
