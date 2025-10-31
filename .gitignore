@@ -6,6 +6,6 @@ build/
 # ---- VSCode / IDE ----
 .vscode/
 
-# ---- UR packages ----
-src/Universal_*/
-src/log/
+# ---- self-developed packages ----
+src/*
+!src/ramses/
