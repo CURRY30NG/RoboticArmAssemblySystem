@@ -2,7 +2,7 @@
 
 **Reference Link:** [https://docs.nav2.org/tutorials/docs/camera\_calibration.html](https://docs.nav2.org/tutorials/docs/camera_calibration.html)
 
-This document guides you through using the camera driver and performing intrinsic calibration. Please follow the steps in order.
+This document guides you through using the camera driver and performing intrinsic calibration. Please follow the steps **in order**.
 
 ## Installation of Calibration-Related Packages
 
@@ -56,7 +56,7 @@ rosdep install --from-paths src -y --ignore-src
 colcon build --symlink-install --packages-up-to camera_aravis2
 ```
 
-## Using the Camera
+## Camera Usage
 
 ### For the first time: Get camera GUID
 
