@@ -49,7 +49,7 @@ code .
 
 ## TODOs: 
 - [x] make documentation clear for current uasge
-- [ ] make development env clear without Docker, git push what? example workflow (work together)   
+- [x] make development env clear without Docker, git push what? example workflow (work together)   
 
 
 
