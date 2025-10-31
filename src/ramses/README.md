@@ -55,7 +55,7 @@ int main(int argc, char **argv)
 ## 🔧 Modify `CMakeLists.txt`
 
 Open `CMakeLists.txt`
-Add the following lines at the end (or replace the example if not present):
+Add the following lines at the end (before **ament_package()**):
 
 ```cmake
 add_executable(hello_node src/hello_node.cpp)
