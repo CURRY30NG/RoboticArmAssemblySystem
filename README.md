@@ -1,10 +1,38 @@
 # FAPS Robotic Arm Cabinet Assembly System
 
+## Workspace Structure Example
+```text
+src/
+├── ramses/               # namespace for self-development packages
+│   ├── ramses_hello/     # for test
+│   ├── ramses_package2/
+│   ├── ...
+│
+├── other 3rd-party namespace/
+│   ├── 3rd-party package1/
+│   ├── 3rd-party package2/
+│   ├── ...
+│
+├── 3rd-party package1/
+|  
+├── 3rd-party package2/
+│
+├── ...
+└──
+```
+
 ## Requirements
 - <a href="https://releases.ubuntu.com/noble/">Ubuntu 24.04</a>
 - <a href="https://docs.ros.org/en/jazzy/Installation.html">ROS2 Jazzy</a>
 - <a href="https://moveit.ai/install-moveit2/binary/">MoveIt2 </a>
 - <a href="https://control.ros.org/jazzy/doc/getting_started/getting_started.html">ros2_control</a>
+
+### for setup locally, please run following:
+```
+sudo apt update
+sudo apt install ros-jazzy-moveit-*
+sudo apt install ros-jazzy-ur-*
+```
 
 ## Resources
 - <a href="https://picknik.ai/hardware-ecosystem/">ROS 2 Compatible Hardwares</a>
