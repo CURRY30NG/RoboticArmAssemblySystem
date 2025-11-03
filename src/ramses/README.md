@@ -1,2 +1,2 @@
 ## example workflow:
-- [C++ package example](package_dev_workflow.md)
+- [C++ package example](./documentation/package_dev_workflow.md)
