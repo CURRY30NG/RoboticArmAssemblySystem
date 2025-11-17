@@ -9,7 +9,7 @@ from cv_bridge import CvBridge
 import tf2_ros
 from tf2_ros import TransformBroadcaster
 from ros2_aruco_interfaces.msg import ArucoMarkers
-import transformations as tf_trans
+import tf_transformations as tf_trans
 
 class ArucoDetectorNode(Node):
     def __init__(self):
@@ -18,8 +18,8 @@ class ArucoDetectorNode(Node):
         # --- 参数 ---
         self.declare_parameter('marker_size', 0.04)
         self.declare_parameter('aruco_dictionary_id', 'DICT_4X4_1000')
-        self.declare_parameter('camera_frame', 'camera_link')
-        self.declare_parameter('publish_debug_image', False)
+        self.declare_parameter('camera_frame', 'camera')
+        self.declare_parameter('publish_debug_image', True)
 
         self.marker_size_ = self.get_parameter('marker_size').get_parameter_value().double_value
         dict_id_str = self.get_parameter('aruco_dictionary_id').get_parameter_value().string_value
@@ -36,7 +36,7 @@ class ArucoDetectorNode(Node):
             self.dictionary_ = cv2.aruco.getPredefinedDictionary(dict_id)
             self.detector_params_ = cv2.aruco.DetectorParameters_create()
         except KeyError:
-            self.get_logger().fatal(f"无效的ArUco字典ID: {dict_id_str}")
+            self.get_logger().fatal(f"Invaild ArUco Dict ID: {dict_id_str}")
             rclpy.shutdown()
             return
 
@@ -47,26 +47,26 @@ class ArucoDetectorNode(Node):
 
         # --- 发布器 ---
         self.tf_broadcaster_ = TransformBroadcaster(self)
-        self.markers_pub_ = self.create_publisher(ArucoMarkers, 'aruco_markers', 10)
-        self.poses_pub_ = self.create_publisher(PoseArray, 'aruco_poses', 10)
+        self.markers_pub_ = self.create_publisher(ArucoMarkers, '/aruco_markers', 10)
+        self.poses_pub_ = self.create_publisher(PoseArray, '/aruco_poses', 10)
         if self.publish_debug_image_:
-            self.debug_image_pub_ = self.create_publisher(Image, 'debug_image', 10)
+            self.debug_image_pub_ = self.create_publisher(Image, '/debug_image', 10)
         else:
             self.debug_image_pub_ = None
 
         # --- 订阅器 ---
         self.info_sub_ = self.create_subscription(
-            CameraInfo, 'camera_info', self.camera_info_callback, 10
+            CameraInfo, '/camera_driver_uv_example/vis/camera_info', self.camera_info_callback, 10
         )
         self.image_sub_ = self.create_subscription(
-            Image, 'image_raw', self.image_callback, 10
+            Image, '/camera_driver_uv_example/vis/image_mono', self.image_callback, 10
         )
 
-        self.get_logger().info("ArUco 检测节点已启动，等待 CameraInfo...")
+        self.get_logger().info("ArUco Detection Node running，Waiting CameraInfo...")
 
     def camera_info_callback(self, msg: CameraInfo):
         if self.camera_matrix_ is None:
-            self.get_logger().info("成功接收到 CameraInfo，节点开始工作。")
+            self.get_logger().info("Received CameraInfo!")
             self.camera_matrix_ = np.array(msg.k).reshape((3, 3))
             self.dist_coeffs_ = np.array(msg.d)
             # 收到一次 CameraInfo 后取消订阅
@@ -100,14 +100,14 @@ class ArucoDetectorNode(Node):
 
     def image_callback(self, msg: Image):
         if self.camera_matrix_ is None:
-            self.get_logger().warn("正在等待 CameraInfo...", throttle_duration_sec=5.0)
+            self.get_logger().warn("Waiting CameraInfo...", throttle_duration_sec=5.0)
             return
 
         try:
             cv_image = self.bridge_.imgmsg_to_cv2(msg, desired_encoding='bgr8')
             gray = cv2.cvtColor(cv_image, cv2.COLOR_BGR2GRAY)
         except Exception as e:
-            self.get_logger().error(f"CvBridge 转换失败: {e}")
+            self.get_logger().error(f"CvBridge Trans Error: {e}")
             return
 
         corners, ids, _ = cv2.aruco.detectMarkers(gray, self.dictionary_, parameters=self.detector_params_)
@@ -168,7 +168,7 @@ class ArucoDetectorNode(Node):
                                 self.marker_size_ * 0.5
                             )
                         except AttributeError:
-                            self.get_logger().warn("当前 OpenCV 版本不支持绘制坐标轴")
+                            self.get_logger().warn("Current OpenCV version doesn't support drawing axis")
 
         if transforms_to_send:
             self.tf_broadcaster_.sendTransform(transforms_to_send)
@@ -182,7 +182,7 @@ class ArucoDetectorNode(Node):
                 debug_img_msg.header = msg.header
                 self.debug_image_pub_.publish(debug_img_msg)
             except Exception as e:
-                self.get_logger().error(f"发布调试图像失败: {e}")
+                self.get_logger().error(f"Pub debug image failed: {e}")
 
 def main(args=None):
     rclpy.init(args=args)
